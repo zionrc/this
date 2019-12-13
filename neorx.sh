@@ -1,6 +1,6 @@
 #!/bin/bash
 export neorx_label=this
-set -x -e
+set -e
 
 ##
 # neo(rx) bash file
