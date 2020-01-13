@@ -1,20 +1,20 @@
 #!/bin/bash
-export zionrc_label=this
+
+##
+# this
+# ----
+# a Zion(rc) script file
+##
+
 set -e
 
-##
-# Zion(rc) bash file
-# ------------------
-# neo release this . . .
-##
-
-case "${zionrc_command}" in
-  release|publish) 
-    git add .
-    git commit -am "release"
-    git push 
-    ;;
-  help|*) 
-    echo "Undefined command, use: release." 
-    ;;
+case "$1" in
+    release|publish)
+        git add .
+        git commit -am "$1"
+        git push
+        ;;
+    help|*)
+        echo "Wrong command '$1', use one of this: release, publish."
+        ;;
 esac
