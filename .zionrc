@@ -3,18 +3,20 @@
 ##
 # this
 # ----
-# a Zion(rc) script file
+# a Zion(rc) tag file
 ##
 
 set -e
+
+hint="use one of this command: 'release', 'publish'"
 
 case "$1" in
     release|publish)
         git add .
         git commit -am "$1"
-        git push
-        ;;
-    help|*)
-        echo "Wrong command '$1', use one of this: release, publish."
-        ;;
+        git push ;;
+    help)
+        echo "Zion(rc) 'this' tag, ${hint}." ;;
+    *)
+        echo "Unknown command '$1', ${hint}." ;;
 esac
